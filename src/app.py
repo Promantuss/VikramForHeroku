@@ -5,7 +5,6 @@ import nltk
 from flask_cors import CORS, cross_origin
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-# nltk.download('stopwords')
 
 app = Flask(__name__)
 CORS(app)
