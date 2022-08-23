@@ -1,7 +1,6 @@
 from flask import Flask, render_template, send_from_directory, request, Response
 import json
 import pandas as pd
-import nltk
 from flask_cors import CORS, cross_origin
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
