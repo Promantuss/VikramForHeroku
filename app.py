@@ -4,7 +4,7 @@ import pandas as pd
 from flask_cors import CORS, cross_origin
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from flask_swagger import swagger
+# from flask_swagger import swagger
 # from flask_restplus import Api, apidoc
 # # from flask_restplus import *
 # # from werkzeug.utils import cached_property
