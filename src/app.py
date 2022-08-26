@@ -1,13 +1,45 @@
-from flask import Flask, render_template, send_from_directory, request, Response
+from flask import Flask, render_template, send_from_directory, request, Response, jsonify
 import json
 import pandas as pd
 from flask_cors import CORS, cross_origin
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from flask_swagger import swagger
+# from flask_restplus import Api, apidoc
+# # from flask_restplus import *
+# # from werkzeug.utils import cached_property
+# import werkzeug
+# import cached_property
+# werkzeug.cached_property = werkzeug.utils.cached_property
+
+# try:
+#     from flask_restplus import Resource, Api, apidoc
+# except ImportError:
+#     import werkzeug
+#     werkzeug.cached_property = werkzeug.utils.cached_property
+#     from flask_restplus import Resource, Api, apidoc
 
 app = Flask(__name__)
 CORS(app)
 app.config['SECRET_KEY'] = 'supersecretkey'
+
+# api = Api(app)
+#
+# @api.documentation
+# def custom_ui():
+#     return apidoc.ui_for(api)
+
+# @app.route("/spec")
+# def spec():
+#     swag = swagger(app)
+#     swag['info']['version'] = "1.0"
+#     swag['info']['title'] = "My API"
+#     return jsonify(swag)
+
+@app.route('/', methods=['GET'])
+@cross_origin()
+def hello():
+    return "Hello World"
 
 
 @app.route('/post_form', methods=['POST'])
